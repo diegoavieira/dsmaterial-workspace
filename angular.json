@@ -151,6 +151,39 @@
           }
         }
       }
+    },
+    "dsmaterial-commons": {
+      "projectType": "library",
+      "root": "projects/dsmaterial-commons",
+      "sourceRoot": "projects/dsmaterial-commons/src",
+      "prefix": "dsm-comm",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/dsmaterial-commons/tsconfig.lib.json",
+            "project": "projects/dsmaterial-commons/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/dsmaterial-commons/src/test.ts",
+            "tsConfig": "projects/dsmaterial-commons/tsconfig.spec.json",
+            "karmaConfig": "projects/dsmaterial-commons/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/dsmaterial-commons/tsconfig.lib.json",
+              "projects/dsmaterial-commons/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "defaultProject": "dsmaterial-web"
