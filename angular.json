@@ -2,5 +2,123 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "dsmaterial-web": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/dsmaterial-web",
+      "sourceRoot": "projects/dsmaterial-web/src",
+      "prefix": "dsm-web",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/dsmaterial-web",
+            "index": "projects/dsmaterial-web/src/index.html",
+            "main": "projects/dsmaterial-web/src/main.ts",
+            "polyfills": "projects/dsmaterial-web/src/polyfills.ts",
+            "tsConfig": "projects/dsmaterial-web/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/dsmaterial-web/src/favicon.ico",
+              "projects/dsmaterial-web/src/assets"
+            ],
+            "styles": ["projects/dsmaterial-web/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/dsmaterial-web/src/environments/environment.ts",
+                  "with": "projects/dsmaterial-web/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "dsmaterial-web:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "dsmaterial-web:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "dsmaterial-web:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/dsmaterial-web/src/test.ts",
+            "polyfills": "projects/dsmaterial-web/src/polyfills.ts",
+            "tsConfig": "projects/dsmaterial-web/tsconfig.spec.json",
+            "karmaConfig": "projects/dsmaterial-web/karma.conf.js",
+            "assets": [
+              "projects/dsmaterial-web/src/favicon.ico",
+              "projects/dsmaterial-web/src/assets"
+            ],
+            "styles": ["projects/dsmaterial-web/src/styles.scss"],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/dsmaterial-web/tsconfig.app.json",
+              "projects/dsmaterial-web/tsconfig.spec.json",
+              "projects/dsmaterial-web/e2e/tsconfig.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/dsmaterial-web/e2e/protractor.conf.js",
+            "devServerTarget": "dsmaterial-web:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "dsmaterial-web:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "dsmaterial-web"
 }
