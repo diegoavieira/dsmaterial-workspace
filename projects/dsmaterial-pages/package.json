@@ -3,9 +3,7 @@
   "version": "0.0.3",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14"
-  },
-  "dependencies": {
+    "@angular/core": "^8.2.14",
     "@dsmaterial/commons": "^0.0.2"
   }
 }
