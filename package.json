@@ -22,6 +22,14 @@
       "pre-push": "ng build --prod"
     }
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@angular/animations": "~8.2.4",
     "@angular/common": "~8.2.4",
@@ -66,10 +74,5 @@
     "tslint": "~5.15.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "~3.5.3"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
