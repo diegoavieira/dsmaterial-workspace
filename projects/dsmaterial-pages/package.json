@@ -5,6 +5,5 @@
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14",
     "@dsmaterial/commons": "^0.0.2"
-  },
-  "gitHead": "4ba10d06f6b5dc1196e4eadb1b528c2a4c0d73e3"
+  }
 }
