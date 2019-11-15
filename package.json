@@ -56,6 +56,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "lerna": "^3.18.4",
     "ng-packagr": "^5.4.0",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
