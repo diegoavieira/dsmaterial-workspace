@@ -3,7 +3,7 @@
   "version": "0.1.4",
   "command": {
     "version": {
-      "tagVersionPrefix": "",
+      "conventionalCommits": true,
       "message": "chore(release): release"
     }
   }

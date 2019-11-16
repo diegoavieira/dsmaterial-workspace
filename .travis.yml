@@ -1,13 +1,11 @@
 dist: trusty
-sudo: true
+os: linux
 
 language: node_js
-node_js:
-  - node
+node_js: node
 
 branches:
-  only:
-    - master
+  only: master
 
 jobs:
   include:
@@ -25,4 +23,3 @@ jobs:
         api_token: $NPM_TOKEN
         on:
           branch: master
-          tags: true
