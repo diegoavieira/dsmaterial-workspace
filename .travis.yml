@@ -10,8 +10,10 @@ branches:
 
 jobs:
   include:
-    - stage: release dsmaterial-pages
+    - stage: release
+      name: 'dsmaterial-pages'
       script:
+        - npm run semantic-release
         - npm run build:dsmaterial-pages
       before_deploy:
         - cd dist/dsmaterial-pages
@@ -22,8 +24,10 @@ jobs:
         email: 'diegoavieira@gmail.com'
         api_token: $NPM_TOKEN
 
-    - stage: release dsmaterial-commons
+    - stage: release
+      name: 'dsmaterial-commons'
       script:
+        - npm run semantic-release
         - npm run build:dsmaterial-commons
       before_deploy:
         - cd dist/dsmaterial-commons

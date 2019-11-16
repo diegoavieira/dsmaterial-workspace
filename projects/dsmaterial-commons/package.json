@@ -1,6 +1,6 @@
 {
   "name": "@dsmaterial/commons",
-  "version": "0.1.8",
+  "version": "0.0.0-semantically-released",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"
