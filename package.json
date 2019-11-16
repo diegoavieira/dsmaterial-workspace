@@ -9,10 +9,13 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "commit": "git-cz",
+    "publish:version": "lerna version",
     "build:dsmaterial-web": "ng build dsmaterial-web --base-href /dsmaterial-web/ --prod",
     "lint:dsmaterial-web": "ng lint dsmaterial-web",
     "build:dsmaterial-pages": "ng build dsmaterial-pages",
-    "lint:dsmaterial-pages": "ng lint dsmaterial-pages"
+    "lint:dsmaterial-pages": "ng lint dsmaterial-pages",
+    "build:dsmaterial-commons": "ng build dsmaterial-commons",
+    "lint:dsmaterial-commons": "ng lint dsmaterial-commons"
   },
   "commitlint": {
     "extends": [
@@ -21,9 +24,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && npm run lint:dsmaterial-web && npm run lint:dsmaterial-pages",
-      "commit-msg": "commitlint --edit",
-      "pre-push": "npm run build:dsmaterial-pages && npm run build:dsmaterial-web"
+      "pre-commit": "pretty-quick --staged",
+      "commit-msg": "commitlint --edit"
     }
   },
   "config": {
