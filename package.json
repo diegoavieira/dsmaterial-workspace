@@ -8,7 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "build:dsmaterial-pages": "ng build dsmaterial-pages --prod",
+    "build:dsmaterial-commons": "ng build dsmaterial-commons --prod"
   },
   "commitlint": {
     "extends": [
