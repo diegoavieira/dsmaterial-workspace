@@ -1,3 +1,6 @@
+dist: trusty
+sudo: true
+
 language: node_js
 node_js:
   - node
@@ -16,9 +19,9 @@ jobs:
         - cd dist/dsmaterial-pages
       deploy:
         provider: npm
-        skip_cleanup: true
+        cleanup: true
         edge: true
         email: 'diegoavieira@gmail.com'
-        api_key: $NPM_TOKEN
+        api_token: $NPM_TOKEN
         on:
-          - branch: master
+          branch: master
