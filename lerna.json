@@ -2,10 +2,8 @@
   "packages": ["projects/*"],
   "version": "0.1.9",
   "command": {
-    "publish": {
-      "conventionalCommits": true
-    },
     "version": {
+      "conventionalCommits": true,
       "message": "chore(release): publish %s"
     }
   }
