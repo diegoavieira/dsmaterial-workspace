@@ -5,17 +5,20 @@ node_js:
 dist: trusty
 sudo: required
 
-script:
-  - npm run build:dsmaterial-pages
+jobs:
+  include:
+    - stage: npm release
+      name: 'dsmaterial-pages'
 
-before_deploy:
-  - cd dist/dsmaterial-pages
+      script:
+        - npm run build:dsmaterial-pages
 
-deploy:
-  provider: npm
-  email: diegoavieira@gmail.com
-  skip_cleanup: true
-  api_key: IIXEZtMhJk/ZnDnroQWxt8R5M6I+e/niyJPrSvtFEfLQirWGusJtN60b2NPfiNx+T0czKCZryl/f/HsR+YPG4c5h+mUNxrWu9re1D5XaTMhz0f32wVb9InbeuTfArCkHTJ5PsOJd4yPhm2iXuFpbjnZzadPr2nXWyVXSbmIOyWOM0lc4NEzspYhRyPRWYufMl/0sMXZrz0f2Tedipi2LXtKae7Q6+GsZ6gwPSav/9471jG3V5zjeK+ls8E6WVlKYXH9YtbedNLWvmCJRemd2LLNo0oezso2JC4wwk+guEgtwPjL2J74ndY7zP9vj078L6xGiZ4s/3epAJdyum2H3FY5UoumkbGPoMiUarMJhN4K85HSYVDdChNugv0KybADvzTDHsx4iFIYs2Ef8N0daBpk3CZAw3elyOqv5wYN6wfK/SXU8Uf+lSX37bXPICoD7O8Xkc+T0DMiD2nwBKnSddi+izVrHq3sGcyFiLjw6csNM9GOswwemaS4H4eixNgDnWHA+bPruA1Ud0t9sX0cywmsLZLRAuWafVpOJ2ARJC480R0e3/yHWW1WisN79ZQBSFDnXBtci9MXou+NLgY6exWQgWT+WsF2jBWzeZRl52CMDOSNj/N06712ygbmSDSla+dwNAer1t+4FvsQkXx1Ub6RU2NuAAHrDKKfIRtROC1Q=
-  on:
-    branch: master
-    repo: diegoavieira/dsmaterial-workspace
+      before_deploy:
+        - cd dist/dsmaterial-pages
+
+      deploy:
+        provider: npm
+        email: diegoavieira@gmail.com
+        api_key: $NPM_TOKEN
+        on:
+          branch: master
