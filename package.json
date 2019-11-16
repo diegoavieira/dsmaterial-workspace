@@ -9,8 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "commit": "git-cz",
-    "build:dsmaterial-pages": "ng build dsmaterial-pages --prod",
-    "build:dsmaterial-commons": "ng build dsmaterial-commons --prod"
+    "build:dsmaterial-pages": "ng build dsmaterial-pages",
+    "build:dsmaterial-commons": "ng build dsmaterial-commons"
   },
   "commitlint": {
     "extends": [
