@@ -5,5 +5,8 @@
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14",
     "@dsmaterial/commons": "^0.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

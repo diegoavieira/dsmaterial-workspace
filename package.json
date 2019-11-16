@@ -31,9 +31,6 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "dependencies": {
     "@angular/animations": "~8.2.4",
     "@angular/common": "~8.2.4",
