@@ -4,10 +4,13 @@ os: linux
 language: node_js
 node_js: node
 
+branches:
+  only:
+    - master
+
 jobs:
   include:
-    - stage: release
-      name: 'dsmaterial-pages'
+    - stage: release dsmaterial-pages
       script:
         - npm run build:dsmaterial-pages
       before_deploy:
@@ -18,11 +21,8 @@ jobs:
         edge: true
         email: 'diegoavieira@gmail.com'
         api_token: $NPM_TOKEN
-        on:
-          branch: master
 
-    - stage: release
-      name: 'dsmaterial-commons'
+    - stage: release dsmaterial-commons
       script:
         - npm run build:dsmaterial-commons
       before_deploy:
@@ -33,5 +33,3 @@ jobs:
         edge: true
         email: 'diegoavieira@gmail.com'
         api_token: $NPM_TOKEN
-        on:
-          branch: master
