@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.5](https://github.com/diegoavieira/dsmaterial-workspace/compare/v0.1.3...v0.1.5) (2019-11-16)
+
+### Bug Fixes
+
+- test ([4eb4a30](https://github.com/diegoavieira/dsmaterial-workspace/commit/4eb4a30d9730cd671517954f82712c29122a60e2))
+
+## 0.1.4 (2019-11-16)
+
+### Bug Fixes
+
+- adjustment ([7662009](https://github.com/diegoavieira/dsmaterial-workspace/commit/76620094e94b0aa2588af9362f8cb6e8c9b22fa0))
+
 ## [0.1.3](https://github.com/diegoavieira/dsmaterial-workspace/compare/v0.1.2...v0.1.3) (2019-11-16)
 
 ### Bug Fixes
