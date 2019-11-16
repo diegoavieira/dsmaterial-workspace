@@ -11,9 +11,9 @@ only:
 
 before_script:
   - npm install -g @angular/cli
-  - npm install
 
 script:
+  - npm install
   - ng build dsmaterial-web --prod --base-href https://diegoavieira.github.io/dsmaterial-workspace/
 
 deploy:
