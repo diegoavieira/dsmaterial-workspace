@@ -6,20 +6,18 @@ branches:
   only:
     - master
 
-before_script:
-  - npm install -g @angular/cli
-
 jobs:
   include:
     - stage: release dsmaterial-pages
       script:
         - npm run lint:dsmaterial-pages
         - npm run build:dsmaterial-pages
+      before_deploy:
+        - cd dist/dsmaterial-pages
       deploy:
         provider: npm
         skip_cleanup: true
         edge: true
-        local-dir: dist/dsmaterial-pages
         email: 'diegoavieira@gmail.com'
         api_key: $NPM_TOKEN
         on:
