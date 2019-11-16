@@ -7,11 +7,6 @@ node_js: node
 jobs:
   include:
     - stage: release
-      name: 'lerna version'
-      script:
-        - npm run publish:version
-
-    - stage: release
       name: 'dsmaterial-pages'
       script:
         - npm run build:dsmaterial-pages
