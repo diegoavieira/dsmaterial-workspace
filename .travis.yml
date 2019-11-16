@@ -2,24 +2,25 @@ language: node_js
 node_js:
   - node
 
-dist: trusty
-sudo: required
-
 branches:
-only:
-  - master
+  only:
+    - master
 
 before_script:
   - npm install -g @angular/cli
 
-script:
-  - ng build dsmaterial-web --prod --base-href https://diegoavieira.github.io/dsmaterial-workspace/
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  edge: true
-  local_dir: dist/dsmaterial-web
-  on:
-    branch: master
+jobs:
+  include:
+    - stage: release dsmaterial-pages
+      script:
+        - npm run lint:dsmaterial-pages
+        - npm run build:dsmaterial-pages
+      deploy:
+        provider: npm
+        skip_cleanup: true
+        edge: true
+        local-dir: dist/dsmaterial-pages
+        email: 'diegoavieira@gmail.com'
+        api_key: $NPM_TOKEN
+        on:
+          - branch: master
