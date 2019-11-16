@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.7](https://github.com/diegoavieira/dsmaterial-workspace/compare/v0.0.6...v0.0.7) (2019-11-16)
+
+**Note:** Version bump only for package dsmaterial-workspace
+
 ## 0.0.6 (2019-11-15)
 
 ### Features
