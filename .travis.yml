@@ -4,14 +4,13 @@ os: linux
 language: node_js
 node_js: node
 
-branches:
-  only: master
-
-script:
-  - npm run publish:version
-
 jobs:
   include:
+    - stage: release
+      name: 'lerna version'
+      script:
+        - npm run publish:version
+
     - stage: release
       name: 'dsmaterial-pages'
       script:
