@@ -17,7 +17,7 @@ jobs:
         - cd dist/dsmaterial-pages
       deploy:
         provider: npm
-        cleanup: true
+        skip_cleanup: true
         edge: true
         email: 'diegoavieira@gmail.com'
         api_token: $NPM_TOKEN
