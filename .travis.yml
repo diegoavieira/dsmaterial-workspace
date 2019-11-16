@@ -19,6 +19,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
+  edge: true
   local_dir: dist/dsmaterial-web
   on:
     branch: master
